@@ -1,5 +1,3 @@
-#HELLO WORLD
-
 # OCCRA2016308
 
 This is our first program for our VEX Robot. It is written in Robot C.
