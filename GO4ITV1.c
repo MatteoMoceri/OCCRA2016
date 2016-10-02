@@ -7,7 +7,7 @@
 
 task main(){
 	//Deadzone contants
-	int threshold = 20;
+	int thresholdpos = 20;
 	int chan1 = vexRT(Ch1);
 	int chan2 = vexRT(Ch2);
 	int chan3 = vexRT(Ch3);
@@ -15,28 +15,28 @@ task main(){
 
 
 	//Ch1 deadzone
-	if(abs(vexRT[Ch1])> threshold)
+	if(abs(vexRT[Ch1]) > thresholdpos)
 		chan1 = vexRT(Ch1);
 	else
 		chan1 = 0;
 
 
 	//Ch2 deadzone
-	if(abs(vexRT[Ch1])> threshold)
+	if(abs(vexRT[Ch1])> thresholdpos)
 		chan2 = vexRT(Ch2);
 	else
 		chan2 = 0;
 
 
 	//Ch3 deadzone
-	if(abs(vexRT[Ch3])> threshold)
+	if(abs(vexRT[Ch3])> thresholdpos)
 		chan3 = vexRT(Ch3);
 	else
 		chan3 = 0;
 
 
 	//Ch4 deadzone
-	if(abs(vexRT[Ch4])> threshold)
+	if(abs(vexRT[Ch4])> thresholdpos)
 		chan4 = vexRT(Ch4);
 	else
 		chan4 = 0;
@@ -51,5 +51,5 @@ task main(){
 
 	//Bucket Lifter
 	while(1 == 1)
-		motor[liftMotor] = Btn8U - Btn8D;
+		motor[liftMotor] = Btn5U - Btn5D;
 }
