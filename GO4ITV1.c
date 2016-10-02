@@ -1,3 +1,4 @@
+#pragma config(Sensor, in1,    Gyro,           sensorGyro)
 #pragma config(Motor,  port2,           frontLeftMotor, tmotorVex393_MC29, openLoop, driveLeft)
 #pragma config(Motor,  port4,           backLeftMotor, tmotorVex393_MC29, openLoop, driveLeft)
 #pragma config(Motor,  port5,           backRightMotor, tmotorVex393_MC29, openLoop, reversed, driveRight)
@@ -12,6 +13,9 @@ task main(){
 	int chan2 = vexRT(Ch2);
 	int chan3 = vexRT(Ch3);
 	int chan4  = vexRT(Ch3);
+
+	//Gyro constants
+	int gyroValue = SensorValue[in1];
 
 
 	//Ch1 deadzone
@@ -50,6 +54,16 @@ task main(){
 	}
 
 	//Bucket Lifter
-	while(1 == 1)
+	while(1 == 1) {
 		motor[liftMotor] = Btn5U - Btn5D;
+
+	//Gyro control for strafing
+	if(gyroValue > 10)
+		motor[backRightMotor] = 10;
+		motor[frontRightMotor] = 10;
+
+	if(gyroValue < -10)
+		motor[backLeftMotor]  = -10;
+    motor[frontLeftMotor] = -10;
+	}
 }
