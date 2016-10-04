@@ -57,13 +57,16 @@ task main(){
 	while(1 == 1) {
 		motor[liftMotor] = Btn5U - Btn5D;
 
-	//Gyro control for strafing
-	if(gyroValue > 10)
-		motor[backRightMotor] = 10;
-		motor[frontRightMotor] = 10;
-
-	if(gyroValue < -10)
-		motor[backLeftMotor]  = -10;
-    motor[frontLeftMotor] = -10;
+		//If the robot is not driving correctly, remmove this code block  //
+		                                                                  //
+		//Gyro control for strafing                                       //
+		if(gyroValue > 10)                                                //
+			motor[backRightMotor] = 10;                                     //
+		motor[frontRightMotor] = 10;                                      //
+		                                                                  //
+		if(gyroValue < -10)                                               //
+			motor[backLeftMotor]  = -10;                                    //
+		motor[frontLeftMotor] = -10;                                      //
+		//________________________________________________________________//
 	}
 }
