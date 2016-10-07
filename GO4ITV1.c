@@ -14,9 +14,6 @@ task main(){
 	int chan3 = vexRT(Ch3);
 	int chan4  = vexRT(Ch3);
 
-	//Gyro constants
-	//	int gyroValue = SensorValue[in1];
-
 	//Ch1 deadzone
 	if(abs(vexRT[Ch1]) > thresholdpos)
 		chan1 = vexRT(Ch1);
