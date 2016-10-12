@@ -9,7 +9,7 @@
 task main(){
 
 	//Potentiometer Constants
-	int armAngle = SensorValue[armPot];
+	//int armAngle = SensorValue[armPot];
 
 
 	//Deadzone contants
@@ -74,4 +74,5 @@ task main(){
 		motor[liftMotor] = -63.5;
 	repeatUntil(armAngle >= 0);
 }
-/**
+**/
+}
