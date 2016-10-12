@@ -9,7 +9,7 @@
 task main(){
 
 	//Potentiometer Constants
-	//int armAngle = SensorValue[armPot];
+	int armAngle = SensorValue[armPot];
 
 
 	//Deadzone contants
@@ -50,22 +50,22 @@ task main(){
 
 	while (true){
 		//Robot movement
-		motor[frontRightMotor] = vexRT[Ch4] - vexRT[Ch1] - vexRT[Ch3];
-		motor[backRightMotor] =  vexRT[Ch4] + vexRT[Ch1] + vexRT[Ch3];
-		motor[frontLeftMotor] = vexRT[Ch4] - vexRT[Ch1] + vexRT[Ch3];
-		motor[backLeftMotor] =  vexRT[Ch4] + vexRT[Ch1] - vexRT[Ch3];
+		motor[frontRightMotor] = vexRT[Ch4] + vexRT[Ch1] - vexRT[Ch3];
+		motor[backRightMotor] =  vexRT[Ch4] - vexRT[Ch1] + vexRT[Ch3];
+		motor[frontLeftMotor] = vexRT[Ch4] + vexRT[Ch1] + vexRT[Ch3];
+		motor[backLeftMotor] =  vexRT[Ch4] - vexRT[Ch1] - vexRT[Ch3];
 
 		//Arm lifter
 		motor[liftMotor] = vexRT[Ch2Xmtr2];
 
 	}
-/**
+
 	// Arm Potentiometer Control
-	while(true){
-		if(armAngle >= 0)
+/**	while(true){
+		if(armAngle <= -114)
 			motor[liftMotor] = 0;
 	}
-
+/**
 	if(Btn8UXmtr2)
 		motor[liftMotor] = 63.5;
 	repeatUntil(armAngle >= 0)
@@ -73,6 +73,5 @@ task main(){
 	if(Btn8DXmtr2)
 		motor[liftMotor] = -63.5;
 	repeatUntil(armAngle >= 0);
-}
-**/
+	**/
 }
