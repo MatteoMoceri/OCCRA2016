@@ -13,7 +13,7 @@ task main(){
 	//Defines the maximum value for the arm;
 	//Value must be between 0 & 5000;
 	//But 5000 only equals 260 degress
-	int max = 2800;
+	int max = 1800;
 
 	SensorValue[hope] = 1;
 
@@ -52,7 +52,7 @@ task main(){
 
 	//Basic and Crab Drive
 	while (true){
-		if((vexRT[Btn7D] == 1)) // && (vexRT[Btn7DXmtr2])
+		if((vexRT[Btn7D] == 1) && (vexRT[Btn7DXmtr2] == 1)) // && (vexRT[Btn7DXmtr2])
 		{
 			SensorValue[lock] = 0;
 			wait1Msec(2000);
